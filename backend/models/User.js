@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken';
+import { SECRET_ACCESS_TOKEN } from '../config/env.js';
+
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -44,6 +47,12 @@ userSchema.pre("save", function (next) {
     });
 });
 
+userSchema.methods.generateAuthToken = function () {
+    const user = this;
+    return jwt.sign({ _id: user._id }, SECRET_ACCESS_TOKEN, {
+        expiresIn: "30d",
+    });
+}
 
 
 export default mongoose.model("users", userSchema)
