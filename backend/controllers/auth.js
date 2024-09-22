@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import bcrypt from "bcrypt";
 
 
 export const register = async (req, res) => {
@@ -10,7 +11,6 @@ export const register = async (req, res) => {
             email,
             password,
         });
-        // Check if user already exists
         const existingUser = await User.findOne({ email });
         if (existingUser)
             return res.status(400).json({
@@ -36,3 +36,41 @@ export const register = async (req, res) => {
     }
     res.end();
 }
+
+
+export async function login(req, res) {
+    const { email } = req.body;
+    try {
+        const existingUser = await User.findOne({ email }).select("+password");
+        if (!existingUser)
+            return res.status(400).json({
+                status: "failed",
+                data: [],
+                message: "Invalid credentials",
+            });
+        const isPasswordCorrect = await bcrypt.compare(
+            `${req.body.password}`,
+            existingUser.password
+        );
+        if (!isPasswordCorrect)
+            return res.status(400).json({
+                status: "failed",
+                data: [],
+                message: "Invalid credentials",
+            });
+        const { password, ...user_data } = existingUser._doc;
+        res.status(200).json({
+            status: "success",
+            data: [user_data],
+            message: "Login successful",
+        });
+    } catch (err) {
+        res.status(500).json({
+            status: "error",
+            code: 500,
+            data: [],
+            message: err.message,
+        });
+    }
+    res.end();
+}   

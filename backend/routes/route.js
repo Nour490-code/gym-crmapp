@@ -1,6 +1,5 @@
 import express from "express";
-import { dashboard, login } from "../controllers/gym.controllers.js";
-import { register } from "../controllers/auth.js";
+import { register, login } from "../controllers/auth.js";
 import Validate from "../middleware/validate.js";
 import { check } from "express-validator";
 
@@ -26,5 +25,17 @@ router.post(
     Validate,
     register
 );
+
+router.post('/login', 
+    check("email")
+        .isEmail()
+        .withMessage("Enter a valid email address")
+        .normalizeEmail(),
+    check("password")
+        .notEmpty()
+        .withMessage("Password is required"),
+    Validate,
+    login
+)
 
 export default router
