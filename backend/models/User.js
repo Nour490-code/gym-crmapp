@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        min: 6
+        select: false
     },
     dateOfSubscription: {
         type: Date,
@@ -46,4 +46,4 @@ userSchema.pre("save", function (next) {
 
 
 
-module.exports = mongoose.model("User", userSchema)
+export default mongoose.model("users", userSchema)
