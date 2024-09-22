@@ -6,8 +6,6 @@ import { check } from "express-validator";
 
 const router = express.Router();
 
-router.get("/", dashboard)
-router.get('/login', login)
 
 router.post(
     "/register",
