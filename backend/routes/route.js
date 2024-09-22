@@ -16,13 +16,13 @@ router.post(
     check("name")
         .not()
         .isEmpty()
-        .withMessage("You first name is required")
+        .withMessage("You name is required")
         .trim()
         .escape(),
     check("password")
         .notEmpty()
         .isLength({ min: 6 })
-        .withMessage("Must be at least 8 chars long"),
+        .withMessage("Must be at least 6 chars long"),
     Validate,
     register
 );
