@@ -4,12 +4,13 @@ import bcrypt from "bcrypt";
 
 export const register = async (req, res) => {
 
-    const { name, email, password } = req.body;
+    const { name, email, password , role} = req.body;
     try {
         const newUser = new User({
             name,
+            role,
             email,
-            password,
+            password
         });
         const existingUser = await User.findOne({ email });
         if (existingUser)
@@ -19,7 +20,7 @@ export const register = async (req, res) => {
                 message: "It seems you already have an account, please log in instead.",
             });
         const savedUser = await newUser.save(); 
-        const { role, ...user_data } = savedUser._doc;
+        const { ...user_data } = savedUser._doc;
         res.status(200).json({
             status: "success",
             data: [user_data],
@@ -31,7 +32,7 @@ export const register = async (req, res) => {
             status: "error",
             code: 500,
             data: [],
-            message: "Internal Server Error",
+            message: err.message,
         });
     }
     res.end();
