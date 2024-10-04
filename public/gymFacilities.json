@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Cardio Zone",
+        "description": "High-intensity cardio machines for a full-body workout, including treadmills, ellipticals, and stationary bikes.",
+        "thumbnail": "stock-vector-street-workout-park-with-people-training-exercising-outdoor-sports-area-with-equipment-2124207332.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Strength Training",
+        "description": "Fully equipped strength training area with free weights, machines, and benches to help build muscle mass.",
+        "thumbnail": "pexels-leonardho-1552242.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Yoga Studio",
+        "description": "A peaceful and spacious yoga studio offering daily classes for all levels, from beginner to advanced.",
+        "thumbnail": "photo-genius-kufLAiPoIlI-unsplash.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Swimming Pool",
+        "description": "Olympic-sized swimming pool available for laps, aquatic fitness, and recreational swimming.",
+        "thumbnail": "brian-matangelo-gRof2_Ftu7A-unsplash.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Personal Training",
+        "description": "Certified personal trainers available to help you achieve your fitness goals with customized workout plans.",
+        "thumbnail": "alora-griffiths-BNrqnvtzXio-unsplash.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Spa & Relaxation",
+        "description": "Relax and unwind with our spa services, including massage therapy, saunas, and hot tubs.",
+        "thumbnail": "huum-NHLS5hOSH0c-unsplash.jpg"
+    }
+]

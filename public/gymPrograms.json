@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Weight Loss Program",
+        "description": "A tailored program designed to help you shed pounds through a combination of cardio, strength training, and nutritional guidance.",
+        "thumbnail": "pexels-leonardho-1552242.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Muscle Gain Program",
+        "description": "Focus on building muscle mass with a structured weightlifting schedule and diet plan to maximize gains.",
+        "thumbnail": "alora-griffiths-BNrqnvtzXio-unsplash.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Strength Training Program",
+        "description": "Develop your strength with our progressive resistance training plan suitable for all fitness levels.",
+        "thumbnail": "stock-vector-street-workout-park-with-people-training-exercising-outdoor-sports-area-with-equipment-2124207332.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Cardio Conditioning",
+        "description": "Improve your cardiovascular fitness with high-intensity interval training (HIIT) and endurance workouts.",
+        "thumbnail": ""
+    },
+    {
+        "id": 5,
+        "title": "Yoga and Flexibility",
+        "description": "Enhance your flexibility and mental clarity through a combination of yoga sessions and stretching routines.",
+        "thumbnail": ""
+    },
+    {
+        "id": 6,
+        "title": "Personal Training",
+        "description": "One-on-one training with certified personal trainers who will customize workouts to help you achieve your goals.",
+        "thumbnail": ""
+    }
+]
